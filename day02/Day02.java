@@ -1,7 +1,7 @@
 package day02;
 
 import java.io.FileNotFoundException;
-import util.Day;
+import day.Day;
 
 public class Day02 extends Day {
 

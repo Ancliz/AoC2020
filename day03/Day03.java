@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-import util.Day;
+import day.Day;
 
 public class Day03 extends Day {
     private List<char[]> lines = new ArrayList<char[]>();

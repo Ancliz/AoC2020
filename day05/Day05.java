@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import util.Day;
+import day.Day;
 
 public class Day05 extends Day {
 
