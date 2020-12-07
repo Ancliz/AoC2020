@@ -47,15 +47,15 @@ public class Day07 extends Day {
         return contains;
     }
 
-    private int countBags(HashMap<String, Integer> currentBag, int noOfPrevBag) {
+    private int countBags(HashMap<String, Integer> currentBag, int noOfBag) {
         int innerCount = 0;
 
         for(Iterator<Map.Entry<String, Integer>> iter = currentBag.entrySet().iterator(); iter.hasNext();) {
             Entry<String, Integer> next = iter.next();
-            int noOfNext = noOfPrevBag * next.getValue();
+            int noOfNext = noOfBag * next.getValue();
             innerCount += countBags(bags.get(next.getKey()), noOfNext);
         }
-        return innerCount + noOfPrevBag;
+        return innerCount + noOfBag;
     }
 
     private void parseBags() {
