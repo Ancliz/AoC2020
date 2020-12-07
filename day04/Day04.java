@@ -42,7 +42,7 @@ public class Day04 extends Day {
         else if(invalidHeight(passport.get("hgt")))                 valid = false;
         else if(invalidEyeColour(passport.get("ecl")))              valid = false;
         else if(!passport.get("pid").matches("[0-9]{9}"))           valid = false;
-        else if(!passport.get("hcl").matches("#([0-9a-f]+){6}"))    valid = false;
+        else if(!passport.get("hcl").matches("#[0-9a-f]{6}"))       valid = false;
         return valid;
     }
 
