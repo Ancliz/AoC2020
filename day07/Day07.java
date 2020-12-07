@@ -12,7 +12,7 @@ import day.Day;
 
 public class Day07 extends Day {
     private HashMap<String, HashMap<String, Integer>> bags;
-    private final String SOUGHT_BAG = "shiny gold bags";
+    private final String SOUGHT_BAG = "shiny gold";
 
     public Day07() throws FileNotFoundException {
         super();
@@ -61,21 +61,17 @@ public class Day07 extends Day {
     private void parseBags() {
         while(scanner.hasNextLine()) {
             HashMap<String, Integer> innerBagMapping = new HashMap<String, Integer>();
-            String[] bag = scanner.nextLine().split(" contain ");
+            String[] bag = scanner.nextLine().split(" bags contain ");
             String[] contents = bag[1].split(", ");
             int quan = 0;
             Scanner sc;
             
             for(String innerBag : contents) {
                 sc = new Scanner(innerBag);
-
+                
                 try {
                     quan = sc.nextInt();
-                    String bagName = sc.nextLine().replaceFirst(" ", "").replaceFirst("\\.", "");
-
-                    if(1 == quan)
-                        bagName += 's';
-
+                    String bagName = sc.nextLine().replaceFirst(" ", "").replaceFirst("\\.", "").replaceFirst(" bags*", "");
                     innerBagMapping.put(bagName, quan);
                 } catch(InputMismatchException e) {}
                 sc.close();
