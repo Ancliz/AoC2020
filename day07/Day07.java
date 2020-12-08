@@ -29,8 +29,9 @@ public class Day07 extends Day {
             if(canContain(innerBag))
                 count[0]++;
         });
+        
         System.out.println("count: " + count[0]);
-        System.out.println("Bag count: " + (countBags(bags.get(SOUGHT_BAG), 1) - 1));
+        System.out.print("Bag count: " + (countBags(bags.get(SOUGHT_BAG), 1) - 1));
         
     }
     
@@ -68,7 +69,7 @@ public class Day07 extends Day {
             
             for(String innerBag : contents) {
                 sc = new Scanner(innerBag);
-                
+
                 try {
                     quan = sc.nextInt();
                     String bagName = sc.nextLine().replaceFirst(" ", "").replaceFirst("\\.", "").replaceFirst(" bags*", "");
