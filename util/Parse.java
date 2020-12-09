@@ -25,17 +25,20 @@ public class Parse {
         return groups;
     }
 
-    public static List<String> listByLine(Scanner scanner) {
+    public static List<?> listByLine(Scanner scanner, boolean isInt) {
         List<String> lines = new ArrayList<String>();
+        List<Long> linesLong = new ArrayList<Long>();
 
         while(scanner.hasNextLine()) {
-            lines.add(scanner.nextLine());
+            String line = scanner.nextLine();
+            if(isInt)   linesLong.add(Long.parseLong(line));
+            else        lines.add(line);
         }
-        return lines;
+        return isInt ? linesLong : lines;
     }
 
-    public static String[] arrayByLine(Scanner scanner) {
-        String[] arr = listByLine(scanner).toArray(new String[0]);
+    public static String[] arrayByLine(Scanner scanner, boolean isInt) {
+        String[] arr = listByLine(scanner, isInt).toArray(new String[0]);
         return arr;
     }
 

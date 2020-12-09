@@ -8,11 +8,10 @@ import day.Day;
 import util.Parse;
 
 public class Day08 extends Day {
-    private String[] instructions = Parse.arrayByLine(scanner);
+    private String[] instructions = Parse.arrayByLine(scanner, false);
     private String[] instr_copy = instructions.clone();
     private Map<Integer, Boolean> completedInstructions;
-    private int accumulator;
-    int ip;
+    private int accumulator, ip;
     
     public Day08() throws FileNotFoundException {
         super();
