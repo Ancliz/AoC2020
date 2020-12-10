@@ -8,7 +8,7 @@ import day.Day;
 import util.Parse;
 
 public class Day08 extends Day {
-    private String[] instructions = Parse.arrayByLine(scanner, false, false);
+    private String[] instructions = (String[]) Parse.stringArrayByLine(scanner, false, false);
     private String[] instr_copy = instructions.clone();
     private Map<Integer, Boolean> completedInstructions;
     private int accumulator, ip;

@@ -39,9 +39,10 @@ public class Parse {
         return isLong ? linesLong : (isInt ? linesInt : lines);
     }
 
-    public static String[] arrayByLine(Scanner scanner, boolean isInt, boolean isLong) {
-        String[] arr = listByLine(scanner, isInt, isLong).toArray(new String[0]);
-        return arr;
-    }
+    public static Object[] stringArrayByLine(Scanner scanner, boolean isInt, boolean isLong) {
+        if(isInt)   return listByLine(scanner, isInt, isLong).toArray(new Integer[0]);
+        if(isLong)  return listByLine(scanner, isInt, isLong).toArray(new Long[0]);
+        else        return listByLine(scanner, isInt, isLong).toArray(new String[0]);
 
+    }
 }
