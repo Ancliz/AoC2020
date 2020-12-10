@@ -25,20 +25,22 @@ public class Parse {
         return groups;
     }
 
-    public static List<?> listByLine(Scanner scanner, boolean isInt) {
+    public static List<?> listByLine(Scanner scanner, boolean isInt, boolean isLong) {
         List<String> lines = new ArrayList<String>();
         List<Long> linesLong = new ArrayList<Long>();
+        List<Integer> linesInt = new ArrayList<Integer>();
 
         while(scanner.hasNextLine()) {
             String line = scanner.nextLine();
-            if(isInt)   linesLong.add(Long.parseLong(line));
-            else        lines.add(line);
+            if     (isLong)     linesLong.add(Long.parseLong(line));
+            else if(isInt)      linesInt.add(Integer.parseInt(line));
+            else                lines.add(line);
         }
-        return isInt ? linesLong : lines;
+        return isLong ? linesLong : (isInt ? linesInt : lines);
     }
 
-    public static String[] arrayByLine(Scanner scanner, boolean isInt) {
-        String[] arr = listByLine(scanner, isInt).toArray(new String[0]);
+    public static String[] arrayByLine(Scanner scanner, boolean isInt, boolean isLong) {
+        String[] arr = listByLine(scanner, isInt, isLong).toArray(new String[0]);
         return arr;
     }
 

@@ -10,7 +10,7 @@ import util.Parse;
 
 public class Day09 extends Day {
     @SuppressWarnings("unchecked")
-    private List<Long> input = (List<Long>) Parse.listByLine(scanner, true);
+    private List<Long> input = (List<Long>) Parse.listByLine(scanner, false, true);
     private final int PREAMBLE_LEN = 25;
     private int sumIndex;
 
@@ -41,9 +41,9 @@ public class Day09 extends Day {
     }
 
     private boolean inPrev25(int curr, long num) {
-        if (num < 0)
+        if(num < 0)
             return false;
-        for (int i = curr; i < sumIndex; ++i) {
+        for(int i = curr; i < sumIndex; ++i) {
             if (input.get(i) == num)
                 return true;
         }
